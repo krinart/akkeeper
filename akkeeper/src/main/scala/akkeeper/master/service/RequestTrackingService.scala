@@ -28,11 +28,11 @@ private[service] trait RequestTrackingService extends Actor with ActorLogging {
   private var currentServiceReceive: Option[Receive] = None
 
   private def getServiceReceive: Receive = {
-    currentServiceReceive.getOrElse(serviceReceive)
+    currentServiceReceive getOrElse serviceReceive
   }
 
   private def baseReceive: Receive = {
-    case request: WithRequestId if (trackedMessages.contains(request.getClass)) =>
+    case request: WithRequestId if trackedMessages.contains(request.getClass) =>
       sendersById.put(request.requestId, SenderContext(sender(), None))
       getServiceReceive(request)
   }
