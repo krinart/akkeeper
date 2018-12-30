@@ -22,22 +22,16 @@ import spray.json._
   *
   * @param uuid the unique ID.
   */
-case class RequestId(uuid: UUID) {
+case class RequestId(uuid: UUID = UUID.randomUUID()) {
   override def toString: String = uuid.toString
-}
-
-object RequestId {
-  def apply(): RequestId = RequestId(UUID.randomUUID())
 }
 
 trait RequestIdJsonProtocol extends DefaultJsonProtocol {
   implicit val requestIdFormat = new JsonFormat[RequestId] {
-    override def write(obj: RequestId): JsValue = {
-      JsString(obj.toString)
-    }
-    override def read(json: JsValue): RequestId = {
-      RequestId(UUID.fromString(json.convertTo[String]))
-    }
+
+    override def write(obj: RequestId): JsValue = JsString(obj.toString)
+
+    override def read(json: JsValue): RequestId = RequestId(UUID.fromString(json.convertTo[String]))
   }
 }
 

@@ -25,12 +25,11 @@ import spray.json._
   *                      belongs to.
   * @param uuid the unique ID of the instance.
   */
-case class InstanceId(containerName: String, uuid: UUID) {
+case class InstanceId(containerName: String, uuid: UUID = UUID.randomUUID()) {
   override def toString: String = containerName + "-" + uuid.toString
 }
 
 object InstanceId {
-  def apply(containerName: String): InstanceId = InstanceId(containerName, UUID.randomUUID())
   def fromString(str: String): InstanceId = {
     val split = str.split("-", 2)
     val (containerName, uuid) = (split(0), split(1))
