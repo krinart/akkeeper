@@ -20,7 +20,7 @@ import java.net.URI
 
 import akkeeper.BuildInfo
 import akkeeper.config._
-import akkeeper.utils.yarn.YarnUtils
+import utils.yarn.YarnUtils
 import com.typesafe.config.ConfigFactory
 import scopt.OptionParser
 

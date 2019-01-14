@@ -16,8 +16,9 @@
 package akkeeper.api
 
 import akkeeper.common._
-import akkeeper.common.api._
+import utils.akka.api._
 import spray.json.DefaultJsonProtocol
+import utils.akka.{RequestId, RequestIdJsonProtocol}
 
 /** The base interface for all requests related to Monitoring API. */
 sealed trait InstanceRequest extends WithRequestId

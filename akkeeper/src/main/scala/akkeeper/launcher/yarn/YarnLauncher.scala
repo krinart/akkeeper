@@ -22,9 +22,9 @@ import java.util
 import akka.actor.Address
 import akkeeper.config._
 import akkeeper.launcher._
-import akkeeper.master.MasterMain
-import akkeeper.utils.CliArguments._
-import akkeeper.utils.yarn._
+import akkeeper.app.master.MasterMain
+import utils.CliArguments._
+import utils.yarn._
 import com.typesafe.config.{Config, ConfigRenderOptions}
 import org.apache.commons.io.FilenameUtils
 import org.apache.hadoop.yarn.api.records._

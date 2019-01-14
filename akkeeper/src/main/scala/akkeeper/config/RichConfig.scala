@@ -15,7 +15,7 @@
  */
 package akkeeper.config
 
-import akkeeper.master.service.MasterService
+import akkeeper.app.master.service.MasterService
 import com.typesafe.config.{Config, ConfigValueFactory}
 
 import scala.collection.JavaConverters._

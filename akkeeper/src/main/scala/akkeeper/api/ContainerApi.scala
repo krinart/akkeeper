@@ -16,8 +16,9 @@
 package akkeeper.api
 
 import akkeeper.common._
-import akkeeper.common.api._
+import utils.akka.api._
 import spray.json._
+import utils.akka.{RequestId, RequestIdJsonProtocol}
 
 /** The base interface for all requests related to Container API. */
 sealed trait ContainerRequest extends WithRequestId

@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit
 import akka.util.Timeout
 import akkeeper.common.ContainerDefinition
 import akkeeper.config.ConfigUtils._
-import akkeeper.storage.zookeeper.ZookeeperClientConfig
+import akkeeper.app.storage.zookeeper.ZookeeperClientConfig
 import com.typesafe.config.Config
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.{FileSystem, Path}

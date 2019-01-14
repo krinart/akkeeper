@@ -15,7 +15,7 @@
  */
 package akkeeper.api
 
-import akkeeper.common.api.CommonApiJsonProtocol
+import utils.akka.api.CommonApiJsonProtocol
 
 trait ApiJsonProtocol extends CommonApiJsonProtocol
                          with ContainerApiJsonProtocol
